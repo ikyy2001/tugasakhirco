@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+<body>
+    <header>
+        <div class="navbar">
+            <div class="logo"><a href="#"><h1>Yusuf Property</h1></a></div>
+            <ul class="links">
+                <li><a href="#">Home</a></li>
+                <li><a href="#">About</a></li>
+                <li><a href="#">Services</a></li>
+                <li><a href="#">Contact</a></li>
+            </ul>
+            <a href="#" class="action_btn">Get Started</a>
+            <div class="toggle_btn">
+                <i class="fa-solid fa-bars"></i>
+            </div>
+        </div>
+        
+        <ul class="dropdown_menu">
+            <li><a href="#">Home</a></li>
+            <li><a href="#">About</a></li>
+            <li><a href="#">Services</a></li>
+            <li><a href="#">Contact</a></li>
+        </ul>
+        
+    </header>
+ 
+    <main>
+        <section id="hero">
+            <h1>Welcome</h1>
+            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Asperiores alias nisi at praesentium! <br>Repudiandae unde deleniti ut voluptates, dolores sit dolorem atque nemo nesciunt! Itaque hic nam aliquam excepturi quos.</p>
+        </section>
+    </main>
+
+    <div class="container">
+        <a href="Mobil.html" class="card">
+            <h3>Mobil</h3>
+        </div>
+        <a href="Motor.html" class="card">
+            <h3>Motor</h3>
+        </div>
+        <a href="kereta.html" class="card">
+            <h3>Kereta</h3>
+        </div>
+        <a href="pesawat.html" class="card">
+            <h3>pesawat</h3>
+        </div>
+        <a href="Kapal.html" class="card">
+            <h3>Kapal</h3>
+        </div>
+    </div>
+
+
+    <script>
+        const toggleBtn = document.querySelector('.toggle_btn');
+const toggleBtnIcon = document.querySelector('.toggle_btn i');
+const dropDownMenu = document.querySelector('.dropdown_menu');
+
+
+toggleBtn.onclick = function() {
+    dropDownMenu.classList.toggle('open');
+    const isOpen = dropDownMenu.classList.contains('open');
+
+    toggleBtnIcon.classList = isOpen
+        ? 'fa-solid fa-bars-xmark'
+        : 'fa-solid fa-bars';
+}
+
+// Menutup dropdown ketika mengklik di luar
+document.addEventListener('click', function(event) {
+    if (!dropDownMenu.contains(event.target) && !toggleBtn.contains(event.target)) {
+        dropDownMenu.classList.remove('open');
+        toggleBtnIcon.classList = 'fa-solid fa-bars'; // Kembali ke ikon awal
+    }
+});
+    </script>
+</body>
+</html>
